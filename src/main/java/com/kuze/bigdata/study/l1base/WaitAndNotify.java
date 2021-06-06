@@ -3,8 +3,12 @@ package com.kuze.bigdata.study.l1base;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class WaitAndNotify {
 
+    /**
+     * 转账时需要同时拿到两个账户
+     */
     public static class Allocator{
         private List<Object> list = new ArrayList<>();
 

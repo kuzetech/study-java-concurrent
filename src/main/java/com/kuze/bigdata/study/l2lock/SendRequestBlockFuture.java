@@ -5,7 +5,12 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class DefaultFuture<T> {
+/**
+ * 模仿 Dubbo 发送请求时 TCP 走的异步
+ * 内部实现同步机制
+ * @param <T>
+ */
+public class SendRequestBlockFuture<T> {
 
     private final ReentrantLock lock = new ReentrantLock();
     private final Condition block = lock.newCondition();

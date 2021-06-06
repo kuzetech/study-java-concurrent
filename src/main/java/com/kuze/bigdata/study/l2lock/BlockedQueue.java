@@ -6,6 +6,10 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 自实现阻塞队列
+ * @param <T>
+ */
 public class BlockedQueue<T> {
 
     private final int size = 10;
