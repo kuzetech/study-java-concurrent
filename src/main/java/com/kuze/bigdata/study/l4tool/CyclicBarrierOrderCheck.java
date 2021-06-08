@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Vector;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 /**
  * 多个线程协作等待
@@ -13,10 +15,14 @@ public class CyclicBarrierOrderCheck {
     private final List<Object> orderQueue = new Vector<>();
     private final List<Object> paymentQueue = new Vector<>();
 
+    //执行回调的线程池
+    Executor executor = Executors.newFixedThreadPool(1);
     private final CyclicBarrier barrier = new CyclicBarrier(2, () -> {
-        Object order = orderQueue.remove(0);
-        Object payment = paymentQueue.remove(0);
-        check(order, payment);
+        executor.execute(()->{
+            Object order = orderQueue.remove(0);
+            Object payment = paymentQueue.remove(0);
+            check(order, payment);
+        });
     });
 
     public static void check(Object order, Object payment){

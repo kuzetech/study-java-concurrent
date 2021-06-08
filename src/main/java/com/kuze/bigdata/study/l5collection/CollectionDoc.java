@@ -4,6 +4,21 @@ public class CollectionDoc {
 
     /**
      *
+     * 同步容器
+     * Vector
+     * Stack
+     * HashTable
+     *
+     * 同步容器由 synchronized 实现，性能不好
+     * 并且如果要遍历容器需要先锁定
+     * synchronized (list) {
+     *    Iterator i = list.iterator();
+     *    while (i.hasNext()){
+     *        foo(i.next());
+     *    }
+     * }
+     *
+     * 并发容器
      * List
      * CopyOnWriteArrayList
      *
