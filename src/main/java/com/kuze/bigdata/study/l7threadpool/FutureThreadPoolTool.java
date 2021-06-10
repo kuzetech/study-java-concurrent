@@ -2,6 +2,9 @@ package com.kuze.bigdata.study.l7threadpool;
 
 import java.util.concurrent.*;
 
+/**
+ * 获取线程池执行结果
+ */
 public class FutureThreadPoolTool {
 
     public static class Result{
