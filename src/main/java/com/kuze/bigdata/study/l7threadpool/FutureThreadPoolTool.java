@@ -38,13 +38,14 @@ public class FutureThreadPoolTool {
 
         Future<?> future = executorService.submit(runnable);
 
-        Future<Object> callableFuture = executorService.submit(new Callable<Object>() {
+        Future<Integer> callableFuture = executorService.submit(new Callable<Integer>() {
             @Override
-            public Object call() throws Exception {
+            public Integer call() throws Exception {
                 //执行处理逻辑
-                return null;
+                return 22;
             }
         });
+        Integer o = callableFuture.get();
 
         Result result1 = new Result();
         Future<Result> resultFuture = executorService.submit(new Task(result1), result1);
