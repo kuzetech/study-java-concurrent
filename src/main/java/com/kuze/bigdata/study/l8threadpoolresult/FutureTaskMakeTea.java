@@ -1,4 +1,4 @@
-package com.kuze.bigdata.study.l7threadpool;
+package com.kuze.bigdata.study.l8threadpoolresult;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
